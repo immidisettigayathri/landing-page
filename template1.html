@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;800&display=swap"
+        rel="stylesheet">
+    <title>TEMPLATE</title>
+</head>
+<script>
+    function showPopup() {
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("myBtn");
+        const span = document.getElementsByClassName("close")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+    /*checkbox.addEventListener("change", function () {
+           // Check if the checkbox is checked
+           if (checkbox.checked) {
+               // Enable the button
+               button.removeAttribute("disabled");
+           } else {
+               // Disable the button
+               button.setAttribute("disabled", "true");
+           }
+       });*/
+
+    function showerror() {
+        const name = document.getElementById('name');
+        const dob = document.getElementById('birthday');
+        const email = document.getElementById('email');
+        const number = document.getElementById('phone_number')
+
+        const errorMessages = document.getElementById('errorMessages');
+
+        var valid = true;
+        errorMessages.textContent = '';
+        if (name.value.trim() === '') {
+            errorMessages.innerHTML += '*Please enter name.<br>';
+            valid = false;
+        }
+
+        if (dob.value.trim() === '') {
+            errorMessages.innerHTML += '*please enter Date of birth.<br>';
+            valid = false;
+        } else if (!isValidDate(dob.value)) {
+            errorMessages.innerHTML += '*Invalid date format (use YYYY-MM-DD).<br>';
+            valid = false;
+        }
+
+        if (email.value.trim() === '') {
+            errorMessages.innerHTML += '*Please enter email.<br>';
+            valid = false;
+        } else if (!isValidEmail(email.value)) {
+            errorMessages.innerHTML += '*Invalid email format.<br>';
+            valid = false;
+        }
+        if (number.value.trim() === '') {
+            errorMessages.innerHTML += '*please enter phonenumber';
+            valid = false;
+        }
+
+
+        return valid;
+    }
+
+    function isChecked(event) {
+        const checkbox = document.getElementById('mycheckbox').checked;
+        const button = document.getElementById('mybutton')
+        if (checkbox) {
+            button.disabled = false;
+            button.style.cursor = 'pointer';
+
+        } else {
+            button.disabled = true;
+            button.style.cursor = 'not-allowed';
+
+
+        }
+    }
+
+    function isValidDate(dateString) {
+        var datePattern = /^\d{4}-\d{2}-\d{2}$/;
+        return datePattern.test(dateString);
+    }
+
+    function isValidEmail(email) {
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    }
+
+
+
+
+</script>
+
+<body>
+
+
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-light justify-content-center navbarr-brand">
+            <!--  <ul class="navbar-nav">
+                <li class="nav-item">
+                    Coworking
+                </li>-->
+            <a href="#" class="navbar-brand">Coworking</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
+                aria-controls="toggleMobileMenu" aria-expanded="false" aria-lable="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                <span class="navbar-toggler-icon">
+            </button>
+
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits-section">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Whoweare-section">whoweare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog-section">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#veiw-section">View</a>
+
+                    </li>
+
+
+                    </li>
+                    <div class="nav">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.facebook.com" target="_blank"><i
+                                        class="fa-brands fa-facebook-f "></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.instagram.com" target="_blank"> <i
+                                        class="fa-brands fa-instagram "></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.twitter.com" target="_blank"> <i
+                                        class="fa-brands fa-twitter "></i></a>
+
+                            </li>
+                            </li>
+                    </div>
+            </div>
+            </ul>
+            </li>
+            </ul>
+        </nav>
+
+        <!--home section-->
+        <div class="container-fluid ">
+            <div class="image-banner">
+                <!-- <img src="icon2.jpg" alt="image" width="100%" height="500">-->
+                <div class="centered">
+
+                    <h6>F A C I L I T I E S</h6>
+                    <h1>Work Space</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nemo ea vero labore ut
+                        dolorem aliquid magnum!</p>
+                    <a href="#benefits-section">
+                        <button value="get started" class="btn">
+                            get started >
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <!--homesection ends-->
+        <!--benfits section starts-->
+
+        <div class="container-fluid container-wrapper" id="benefits-section">
+
+            <div class="row">
+                <div class="col-lg-6 col-6 p-4 bg-light text-black"><br>
+                    <div class="benfits">
+                        <h6>B E N E F I T S</h6>
+                        <h1> your comfort is our priority</h1>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 p-4 col-6 bg-light text-black benefits">
+                    <p> <br>Lorem ipsum is placeholder text commonly used in the
+                        graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-3 p-3 col-6 col-md-3  bg-light text-black ">
+                        <div class="benefit-container">
+                            <i class="fa-regular fa-envelope benefit-icons"></i>
+                            <h3> Mail<br> </h3>
+                            <p> Lorem ipsum is placeholder text commonly graphic, print, and
+                                publishing
+                                industries for previewing layouts and visual mockups.
+                            <p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-3 col-6  col-md-3 bg-light text-black">
+                        <div class="benefit-container">
+                            <i class="fa-solid fa-tv benefit-icons"></i>
+                            <h3> Visual<br></h3>
+                            <p> Lorem ipsum is placeholder text commonly graphic, print, and
+                                publishing
+                                industries for previewing layouts and visual mockups .</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-3 col-6 col-md-3 bg-light text-black">
+                        <div class="benefit-container">
+                            <i class="fa-regular fa-folder benefit-icons"></i>
+                            <h3> File<br></h3>
+                            <p>Lorem ipsum is placeholder text commonly graphic, print, and
+                                publishing
+                                industries
+                                for previewing layouts and visual mockups.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-3 col-6 col-md-3 bg-light text-black">
+                        <div class="benefit-container"><i class="fa-regular fa-calendar benefit-icons"></i>
+                            <h3>calender<br></h3>
+                            <p>Lorem ipsum is placeholder text commonly graphic, print, and
+                                publishing
+                                industries
+                                for previewing layouts and visual mockups .</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 p-3 col-6 col-md-3 bg-light text-black">
+                        <div class="benefit-container"><i class="fa-solid fa-suitcase benefit-icons"></i>
+                            <h3>Suitcase<br></h3>
+                            <p>Lorem ipsum is placeholder text commonly graphic, print, and
+                                publishing
+                                industries for
+                                previewing layouts and visual mockups .</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-3 col-6 col-md-3 bg-light text-black">
+                        <div class="benefit-container"><i class="fa-regular fa-comment benefit-icons"></i>
+                            <h3> Chat<br></h3>
+                            <p>Lorem ipsum is placeholder text commonly graphic, print, and
+                                publishing
+                                industries for
+                                previewing layouts and visual mockups.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-3 bg-light col-6 col-md-3 text-black">
+                        <div class="benefit-container"><i class="fa-solid fa-globe benefit-icons"></i>
+                            <h3>Global<br></h3>
+                            <p>Lorem ipsum is placeholder text commonly graphic, print, and
+                                publishing
+                                industries for
+                                previewing layouts and visual mockups</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 p-3 bg-light col-6 col-md-3 text-black">
+                        <div class="benefit-container"><i class="fa-solid fa-desktop benefit-icons"></i>
+                            <h3>Sites<br></h3>
+                            <p>Lorem ipsum is placeholder text commonly graphic, print, and
+                                publishing
+                                industries for
+                                previewing layouts and visual mockups.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--benfits section ends-->
+        <!--about us section-->
+        <div class="container-fluid container-wrapper" id="Whoweare-section">
+            <div class="row">
+                <div class="col-sm-6 p-3 bg-light text-black ">
+                    <div class="creative">
+                        <h6>W H O W E A R E</h6>
+
+                        <h1>WE're Creative<br> Coworking working <br>Space For Sucsess</h1>
+                        <p>Lorem ipsum is placeholder text
+                            commonly
+                            used in the graphic, print, and publishing industries for previewing layouts and visual
+                            mockups
+                            and public industries for previewing layouts dolerm! </p>
+                        <button onclick="showPopup()" id="myBtn">contact Us</button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <form id="form" onsubmit="return showerror()">
+                                    <h1>Form</h1>
+                                    <div class="form-1">
+                                        <input type="text" id="name" placeholder="Enter your name"
+                                            style="text-transform: uppercase" />
+
+                                    </div>
+
+                                    <div class="form-1">
+                                        <input type="email" id="email" placeholder="Enter your email" />
+                                    </div>
+                                    <div class="form-1">
+
+
+                                        <input type="date" id="birthday" placeholder="Enter your date of birth" />
+                                    </div>
+                                    <div class="form-1">
+
+                                        <input type="text" id="phone_number" placeholder="Enter your number"
+                                            minlength="10" maxlength="10" pattern="[0-9]+" />
+                                    </div>
+
+                                    <div class="form-1">
+
+
+                                        <textarea rows="5" cols="5" placeholder="Enter your comment here..."></textarea>
+                                    </div>
+                                    <!-- <div class="form-1">
+                                        <input type="checkbox" id="terms" name="input">
+                                        <label for="">Accept Terms&Conditions</label>
+                                    </div>-->
+                                    <div class="form-2">
+
+                                        <label for="input-1">
+                                            <input type="checkbox" id="mycheckbox" name="input"
+                                                onchange="isChecked(this)">
+                                            <p>I Accept terms and
+                                                conditions</input>
+                                        </label></p>
+                                    </div>
+                                    <button type="submit" value="submit" id="mybutton" disabled
+                                        style="cursor:not-allowed;">
+                                        Submit
+
+                                    </button>
+
+                                </form>
+                                <div id="errorMessages" class="error"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 p-3 bg-light text-black img-wrapper"><img src="girl.jpeg" width="300" height="auto"
+                        class="creatives"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 p-3 col-4 col-md-4 bg-light about-image-wrapper">
+                    <img src="22.jpg " class="about-image">
+                </div>
+                <div class="col-sm-4 p-3 col-4 col-md-4   bg-light about-image-wrapper">
+                    <img src="11.jpg" class="about-image">
+                </div>
+                <div class="col-sm-4 p-3 col-4 col-md-4 bg-light about-image-wrapper">
+                    <img src="77.jpg" class="about-image">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 p-3 col-8 col-md-8 bg-light about-image-wrapper">
+                    <img src="1.jpg" class="about-image">
+                </div>
+                <div class="col-sm-4 p-3 col-4 col-md-4 bg-light about-image-wrapper">
+                    <img src="3.jpg" class="about-image">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 p-3 col-4 col-md-4 bg-light about-image-wrapper">
+                    <img src="66.jpg" class="about-image">
+                </div>
+                <div class="col-sm-4 p-3 col-4 col-md-4 bg-light about-image-wrapper">
+                    <img src="55.jpg" class="about-image">
+                </div>
+                <div class="col-sm-4 p-3 col-4 col-md-4 bg-light about-image-wrapper">
+                    <img src="88.jpg" class="about-image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--aboutus section ends-->
+    <!--creativity section starts-->
+    <div class="container-fluid container-wrapper " id="blog-section">
+
+        <div class="row">
+            <div class="creativity">
+                <h6>
+                    <h6>E X A M P L E S </h6>
+                </h6>
+                <h1>We create space a for creativity</h1>
+            </div>
+
+
+
+            <div class="col-sm-3 p-3 col-6 bg-light text-black about-image-wrapperr"><img src="9.jpg" width="100%"
+                    height="auto" class="creativity-image">
+            </div>
+            <div class="col-sm-3 p-3 col-6 bg-light text-black about-image-wrapperr"><img src="1.jpg" width="100%"
+                    height="auto" class="creativity-image"></div>
+            <div class="col-sm-3 p-3 col-6 bg-light text-black about-image-wrapperr"><img src="4.jpg" width="100%"
+                    height="auto" class="creativity-image"></div>
+            <div class="col-sm-3 p-3 col-6 bg-light text-black about-image-wrapperr"><img src="5.jpg" width="100%"
+                    height="auto" class="creativity-image"></div>
+        </div>
+    </div>
+
+    <!--creativitysection ends-->
+    <!--footer-->
+    <div class="container-fluid container-wrapperr " id="veiw-section">
+        <div class="footer">
+            <div class="row">
+                <div class="col-sm-4 p-3 col-6   bg-dark text-white">
+                    <div class="wrapper-footer"></div>
+                    <h1>Coworking Space</h1>
+                    <p>Lorem ipsum is placeholder text
+                        commonly used in
+                        the
+                        graphic, print, and publishing industries
+
+                    </p>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f    "></i></a>
+                    <a href="https://www.instagram.com" target="_blank"> <i class="fa-brands fa-instagram "></i></a>
+                    <a href="https://www.twitter.com" target="_blank"> <i class="fa-brands fa-twitter"></i></a><br>
+
+                    <div class="copy-wrapper"> <span>&copy;copyright 2025 All rights reserved</span></div>
+                </div>
+
+                <div class="col-sm-4 p-3 col-6  bg-dark text-white ">
+                    <div class="wrapper-footer"></div>
+                    <h1>About</h1>
+                    <p>Lorem ipsum is placeholder text commonly used in
+                        the
+                        graphic, print, and publishing industries for previewing layouts and visual mockups.
+                    </p>
+                    <i class="fa-solid fa-location-dot "></i><a
+                        href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003 "
+                        target="_blank"> 1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003</a>
+                    <button onclick="showPopup()" id="myBtn">contact Us</button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <form id="form">
+                                <h1>Form</h1>
+
+                                <div class="form-1">
+
+                                    <input type="text" id="name" placeholder="Enter your name" />
+                                </div>
+
+                                <div class="form-1">
+                                    <input type="email" id="email" placeholder="Enter your email" />
+                                </div>
+                                <div class="form-1">
+                                    <input type="date" id="birthday" placeholder="Date of birth" />
+                                </div>
+
+                                <div class="form-1">
+
+                                    <textarea name="comment" id="comment" placeholder="Enter your comment here" rows="5"
+                                        cols="5">
+                                    </textarea>
+                                    <textarea rows="4" cols="50" placeholder="Describe yourself here..."></textarea>
+                                </div>
+
+                                <button type="submit" value="submit">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 p-3    bg-dark text-white 'Poppins', sans-serif">
+                    <div class="wrapper-footer"></div>
+                    <h1> Quick Links</h1>
+
+                    <div class="quick-wrapper">
+                        <p> <a href="#">- Orders</a></p>
+                        <p> <a href="#">- Support</a></p>
+                        <p> <a href="#">-Forums</a></p>
+                        <p> <a href="#">-Privacy & Policy</a></p>
+                        <p> <a href="#">-Terms</a></p>
+                        <p> <i class="fa-solid fa-phone"></i><a href="tel:+4733378901">+88 123 456 78 90</a>
+                        </p>
+                        <p> <i class="fa-regular fa-envelope"></i><a
+                                href="mailto:someone@example.com">mobirse@company.com
+                            </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

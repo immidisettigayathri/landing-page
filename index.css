@@ -1,0 +1,109 @@
+h1 {
+    text-transform: uppercase;
+
+}
+
+/* Styling the Body element i.e. Color,
+Font, Alignment */
+body {
+    background-color: #d1866d;
+    /* font-family: Verdana; */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styling the Form (Color, Padding, Shadow) */
+form {
+    background-color:white;
+    max-width: 500px;
+    margin: 50px;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    /* margin-left: 50px;*/
+    margin: 0 auto;
+}
+
+/* Styling form-control Class */
+.form-1 {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+/* Styling form-control Label */
+.form-1 label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Styling form-control input,
+select, textarea */
+.form-1 input,
+.form-1 select,
+.form-1 textarea {
+    border: 1px solid #777;
+    border-radius: 10px;
+    /* font-family: inherit; */
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+/* Styling form-control Radio
+button and Checkbox */
+.form-1 input[type="radio"],
+.form-1 input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+}
+
+/* Styling Button */
+button {
+    background-color: #d5a65b;
+    border: 1px solid #777777;
+    border-radius: 10px;
+    /* font-family: inherit; */
+    display: block;
+    width: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin: auto;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 20px;
+
+}
+
+@media all and (min-width:250px) and (max-width:400px) {
+    body {
+        background-color: #40808b;
+        font-weight: 500;
+        margin: 50px 50px;
+    }
+
+    button {
+        background-color: green;
+
+        width: 70%
+    }
+}
+
+@media all and (orientation:landscape) and (min-width:500px) and (max-width:600px) {
+    body {
+        /* font-family:serif; */
+        background-color: pink
+    }
+}
+
+@media all and (min-width:500px) {
+    .form-1 input,
+
+    .form-1 select,
+    .form-1 textarea {
+        border: 1px solid #22852f;
+        border-radius: 10px;
+        /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+        font-family: 'Poppins', sans-serif;
+
+    }
+}
